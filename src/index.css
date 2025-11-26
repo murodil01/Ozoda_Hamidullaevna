@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================
+   Global smooth scrolling
+   ========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: CSS variables for easy theming */
+:root{
+  --scroll-thumb-start: #A9BFBD; /* yorqinroq */
+  --scroll-thumb-end:   #1F4F4D; /* chuqurroq */
+  --scroll-track:       rgba(31,79,77,0.06); /* track uchun yengil fon */
+  --scroll-glow:        rgba(41,120,115,0.18);
+  --scroll-width:       12px; /* asosiy width */
+  --timeline-img: url('/mnt/data/b4b1314a-509f-47c4-9bea-d8ec0c6c8aa0.png'); /* (agar kerak bo'lsa) lokal rasm yo'li */
+}
+
+/* =========================
+   WebKit browsers (Chrome, Edge, Safari)
+   ========================= */
+
+/* Whole scrollbar width */
+::-webkit-scrollbar {
+  width: var(--scroll-width);
+  height: var(--scroll-width);
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, transparent 0%, var(--scroll-track) 100%);
+  border-radius: 999px;
+  margin: 6px; /* ichki bo'shliq ko'rinishi uchun */
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.03);
+}
+
+/* Thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--scroll-thumb-start), var(--scroll-thumb-end));
+  border-radius: 999px;
+  border: 3px solid rgba(255,255,255,0.0); /* clear gap look */
+  min-height: 40px;
+  box-shadow: 0 6px 18px var(--scroll-glow);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+/* Thumb hover / active state */
+::-webkit-scrollbar-thumb:hover {
+  transform: scaleY(1.05);
+  box-shadow: 0 10px 30px rgba(31,79,77,0.22);
+}
+
+/* Thumb when dragging */
+::-webkit-scrollbar-thumb:active {
+  transform: scaleY(1.08);
+  box-shadow: 0 14px 40px rgba(31,79,77,0.28);
+}
+
+/* Corner (bottom-right) */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* =========================
+   Firefox styling
+   ========================= */
+/* Firefox supports simpler API */
+* {
+  /* scrollbar-width accepts auto, thin, none — we set "thin" for consistency */
+  scrollbar-width: thin;
+  /* scrollbar-color: thumb track; */
+  scrollbar-color: var(--scroll-thumb-end) var(--scroll-track);
+}
+
+/* =========================
+   Optional: dotted "rail" appearance for large containers
+   ========================= */
+.container-scroll-nice {
+  scrollbar-gutter: stable;
+  /* For visual effect, you can place a subtle background pattern in the track via pseudo-element on container */
+  position: relative;
+  overflow: auto;
+}
+
+/* Example: add a subtle rail overlay (works if container has position:relative) */
+.container-scroll-nice::after{
+  content: "";
+  position: absolute;
+  right: 6px; /* align with track inner margin */
+  top: 0;
+  bottom: 0;
+  width: calc(var(--scroll-width) - 8px);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(31,79,77,0.02), rgba(31,79,77,0.04));
+  pointer-events: none;
+  mix-blend-mode: normal;
+}
+
+/* =========================
+   Mobile tuning (optional)
+   ========================= */
+@media (max-width: 640px) {
+  :root { --scroll-width: 8px; }
+  ::-webkit-scrollbar { width: var(--scroll-width); height: var(--scroll-width); }
+  ::-webkit-scrollbar-thumb { min-height: 28px; }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin 7s linear infinite;
+}
+
+/* globals.css yoki footer.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE va Edge */
+  scrollbar-width: none; /* Firefox */
+}

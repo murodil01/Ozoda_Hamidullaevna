@@ -1,6 +1,59 @@
 import { FaLinkedin, FaPhone, FaTelegram, FaTwitter } from "react-icons/fa6";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    ism: "",
+    email: "",
+    phone: "",
+    country: "",
+    xabar: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = new FormData();
+    data.append("ism", formData.ism);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("country", formData.country);
+    data.append("xabar", formData.xabar);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mqavzzyw", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        toast.success("Muvaffaqiyatli yuborildi!");
+        setFormData({
+          ism: "",
+          email: "",
+          phone: "",
+          country: "",
+          xabar: "",
+        });
+      } else {
+        toast.error("Xatolik yuz berdi. Qayta urinib ko‘ring.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("⚠️ Serverga ulanib bo‘lmadi.");
+    }
+  };
+
   return (
     <div
       id="contact"
@@ -83,12 +136,7 @@ const Contact = () => {
 
         {/* RIGHT FORM */}
         <div className="w-full lg:w-[60%]">
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Form submitted!");
-            }}
-          >
+          <form onSubmit={handleSubmit}>
             {/* FORM GRID */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
               {/* Name */}
@@ -97,9 +145,12 @@ const Contact = () => {
                   Your Name
                 </label>
                 <input
+                  name="ism"
+                  value={formData.ism}
+                  onChange={handleInputChange}
                   type="text"
                   required
-                  placeholder="Xasanova Go’zal"
+                  placeholder="Enter your name"
                   className="w-full bg-[#F4F4F4] px-4 py-2.5 rounded-2xl border border-[#E5E5E5] focus:ring-2 focus:ring-[#26938A] outline-none"
                 />
               </div>
@@ -110,9 +161,12 @@ const Contact = () => {
                   Email
                 </label>
                 <input
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   type="email"
                   required
-                  placeholder="xasanovagozal@gmail.com"
+                  placeholder="Enter your email"
                   className="w-full bg-[#F4F4F4] px-4 py-2.5 rounded-2xl border border-[#E5E5E5] focus:ring-2 focus:ring-[#26938A] outline-none"
                 />
               </div>
@@ -123,8 +177,11 @@ const Contact = () => {
                   Phone
                 </label>
                 <input
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
                   type="tel"
-                  placeholder="+998 90 123 45 67"
+                  placeholder="Enter your phone"
                   className="w-full bg-[#F4F4F4] px-4 py-2.5 rounded-2xl border border-[#E5E5E5] focus:ring-2 focus:ring-[#26938A] outline-none"
                 />
               </div>
@@ -135,8 +192,11 @@ const Contact = () => {
                   Country
                 </label>
                 <input
+                  name="country"
+                  value={formData.country}
+                  onChange={handleInputChange}
                   type="text"
-                  placeholder="Uzbekistan"
+                  placeholder="Enter your country"
                   className="w-full bg-[#F4F4F4] px-4 py-2.5 rounded-2xl border border-[#E5E5E5] focus:ring-2 focus:ring-[#26938A] outline-none"
                 />
               </div>
@@ -147,9 +207,12 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  name="xabar"
+                  value={formData.xabar}
+                  onChange={handleInputChange}
                   rows={6}
                   required
-                  placeholder="Salom"
+                  placeholder="Enter"
                   className="w-full bg-[#F4F4F4] px-4 py-2.5 rounded-2xl border border-[#E5E5E5] focus:ring-2 focus:ring-[#26938A] outline-none resize-none"
                 />
               </div>

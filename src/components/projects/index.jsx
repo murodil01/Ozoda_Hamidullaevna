@@ -128,6 +128,23 @@ const Projects = () => {
 
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
+  const scrollPrev = () => {
+    sliderRef.current?.scrollBy({ left: -420, behavior: "smooth" });
+  };
+
+  const scrollNext = () => {
+    if (!sliderRef.current) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+
+    // Oxiriga yetganini tekshiramiz
+    if (scrollLeft + clientWidth >= scrollWidth - 10) {
+      // BOSHIGA QAYTADI
+      sliderRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      sliderRef.current.scrollBy({ left: 420, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -136,20 +153,18 @@ const Projects = () => {
       const handle = () => checkScrollButtons();
       slider.addEventListener("scroll", handle);
       window.addEventListener("resize", handle);
+      // AUTOPLAY: har 3 soniyada next tugmasi chaqiriladi
+      const interval = setInterval(() => {
+        scrollNext();
+      }, 3000);
+
       return () => {
         slider.removeEventListener("scroll", handle);
         window.removeEventListener("resize", handle);
+        clearInterval(interval);
       };
     }
   }, []);
-
-  const scrollPrev = () => {
-    sliderRef.current?.scrollBy({ left: -420, behavior: "smooth" });
-  };
-
-  const scrollNext = () => {
-    sliderRef.current?.scrollBy({ left: 420, behavior: "smooth" });
-  };
 
   const openDetail = (id) => {
     setSelected(moreDetails.find((i) => i.id === id));

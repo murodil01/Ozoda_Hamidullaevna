@@ -10,7 +10,6 @@ const Footer = () => {
       <div className="max-w-[1376px] mx-auto px-5 sm:px-10 md:px-[25px] py-10 flex flex-col md:flex-row justify-between items-start gap-10">
         {/* Logo & Contact */}
         <div className="flex flex-col gap-4 md:w-[400px]">
-          <img src="Logo" alt="Logo" className="w-32 h-auto" />
           <a
             href="#"
             className="flex items-center gap-2 text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer"

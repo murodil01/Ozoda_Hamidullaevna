@@ -235,7 +235,7 @@ const Projects = () => {
         </div>
 
         {/* ARROWS — ALWAYS BELOW, FIXED POSITION */}
-        <div className="flex justify-center sm:justify-end gap-4 mt-10">
+        <div className="flex justify-end gap-4 mt-10">
           <button
             aria-label="prev"
             onClick={scrollPrev}

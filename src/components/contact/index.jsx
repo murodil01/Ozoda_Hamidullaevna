@@ -1,6 +1,8 @@
-import { FaLinkedin, FaPhone, FaTelegram, FaTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaTelegram } from "react-icons/fa6";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import { MdEmail } from "react-icons/md";
+import { FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -76,61 +78,86 @@ const Contact = () => {
           </h3>
 
           <div className="flex flex-col gap-5 mt-25">
-            {/* Phone */}
-            <a
-              aria-label="phone"
-              href="tel:+998946520203"
-              className="flex items-center gap-3 group"
-            >
-              <div className="bg-[#1F4F4D] text-white rounded-full p-3 group-hover:bg-[#E1306C] transition-all">
-                <FaPhone size={18} />
-              </div>
-              <span className="font-medium text-[#002C2B] text-[18px]">
-                (+998) 94 652 02 03
-              </span>
-            </a>
+            {/* Email */}
+            <div className="flex items-center gap-3">
+              <a
+                aria-label="email"
+                href="mailto:dr.ozodayuldasheva@gmail.com"
+                target="_blank"
+                className="bg-[#1F4F4D] text-white rounded-full p-3 hover:bg-[#E1306C] transition-all"
+              >
+                <MdEmail size={18} />
+              </a>
+              <a
+                href="mailto:dr.ozodayuldasheva@gmail.com"
+                className="font-medium text-[#002C2B] text-[18px] hover:underline"
+              >
+                dr.ozodayuldasheva@gmail.com
+              </a>
+            </div>
 
-            {/* Twitter */}
-            <a
-              aria-label="twitter"
-              href="#"
-              className="flex items-center gap-3 group"
-            >
-              <div className="bg-[#1F4F4D] text-white rounded-full p-3 group-hover:hover:bg-[#1DA1F2] transition-all">
-                <FaTwitter size={18} />
-              </div>
-              <span className="font-medium text-[#002C2B] text-[18px]">
-                jkjhgfdsrtyuiklkjhgfd
-              </span>
-            </a>
+            {/* Instagram */}
+            <div className="flex items-center gap-3">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/accounts/login/?next=%2Fdr.ozoda_yuldasheva%2F&source=omni_redirect"
+                aria-label="instagram"
+                className="bg-[#1F4F4D] text-white rounded-full p-3 hover:bg-[#E1306C] transition-all"
+              >
+                <FaInstagram size={18} />
+              </a>
+              <a
+                href="https://www.instagram.com/accounts/login/?next=%2Fdr.ozoda_yuldasheva%2F&source=omni_redirect"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#002C2B] text-[18px] hover:underline"
+              >
+                dr.ozoda_yuldasheva
+              </a>
+            </div>
 
             {/* LinkedIn */}
-            <a
-              aria-label="linkedin"
-              href="#"
-              className="flex items-center gap-3 group"
-            >
-              <div className="bg-[#1F4F4D] text-white rounded-full p-3 group-hover:hover:bg-[#0A66C2] transition-all">
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.linkedin.com/in/dr-ozoda-yuldasheva/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="linkedin"
+                className="bg-[#1F4F4D] text-white rounded-full p-3 hover:bg-[#0A66C2] transition-all"
+              >
                 <FaLinkedin size={18} />
-              </div>
-              <span className="font-medium text-[#002C2B] text-[18px]">
+              </a>
+              <a
+                href="https://www.linkedin.com/in/dr-ozoda-yuldasheva/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#002C2B] text-[18px] hover:underline"
+              >
                 Dr. Ozoda Hamidullaevna Yuldasheva
-              </span>
-            </a>
+              </a>
+            </div>
 
             {/* Telegram */}
-            <a
-              aria-label="telegram"
-              href="#"
-              className="flex items-center gap-3 group"
-            >
-              <div className="bg-[#1F4F4D] text-white rounded-full p-3 group-hover:bg-[#0088CC] transition-all">
+            <div className="flex items-center gap-3">
+              <a
+                href="https://t.me/FOSNAASH/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="telegram"
+                className="bg-[#1F4F4D] text-white rounded-full p-3 hover:bg-[#0088CC] transition-all"
+              >
                 <FaTelegram size={18} />
-              </div>
-              <span className="font-medium text-[#002C2B] text-[18px]">
+              </a>
+              <a
+                href="https://t.me/FOSNAASH/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#002C2B] text-[18px] hover:underline"
+              >
                 Hamidullaevna Yuldasheva
-              </span>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -150,7 +177,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   type="text"
                   required
-                  placeholder="Enter your name"
+                  placeholder="Enter your full name."
                   className="w-full bg-[#F4F4F4] px-4 py-2.5 rounded-2xl border border-[#E5E5E5] focus:ring-2 focus:ring-[#26938A] outline-none"
                 />
               </div>
@@ -181,7 +208,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   type="tel"
-                  placeholder="Enter your phone"
+                  placeholder="Enter your phone number"
                   className="w-full bg-[#F4F4F4] px-4 py-2.5 rounded-2xl border border-[#E5E5E5] focus:ring-2 focus:ring-[#26938A] outline-none"
                 />
               </div>
@@ -212,7 +239,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   rows={6}
                   required
-                  placeholder="Enter"
+                  placeholder="Enter your message"
                   className="w-full bg-[#F4F4F4] px-4 py-2.5 rounded-2xl border border-[#E5E5E5] focus:ring-2 focus:ring-[#26938A] outline-none resize-none"
                 />
               </div>

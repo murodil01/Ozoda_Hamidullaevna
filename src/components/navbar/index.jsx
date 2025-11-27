@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import {
-  FaFacebook,
   FaLinkedin,
-  FaTwitter,
   FaBars,
   FaTimes,
+  FaInstagram,
 } from "react-icons/fa";
 import { BsTelegram } from "react-icons/bs";
 import hero1 from "../../assets/hero/hero1.png";
 import hero2 from "../../assets/hero/hero2.svg";
+import { MdEmail } from "react-icons/md";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +30,9 @@ const Navbar = () => {
   const handleMobileNavClick = (sectionId) => {
     setIsMobileMenuOpen(false);
     setTimeout(() => {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById(sectionId)
+        ?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   };
 
@@ -56,7 +58,7 @@ const Navbar = () => {
               {/* Desktop Navigation */}
               <ul className="hidden md:flex items-center gap-6">
                 <li className="text-[#002C2B] font-normal text-[20px] hover:text-[#26938A] transition-all cursor-pointer">
-                  <a 
+                  <a
                     href="#home"
                     onClick={(e) => handleDesktopNavClick(e, "home")}
                   >
@@ -64,7 +66,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="text-[#002C2B] font-normal text-[20px] hover:text-[#26938A] transition-all cursor-pointer">
-                  <a 
+                  <a
                     href="#about"
                     onClick={(e) => handleDesktopNavClick(e, "about")}
                   >
@@ -72,7 +74,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="text-[#002C2B] font-normal text-[20px] hover:text-[#26938A] transition-all cursor-pointer">
-                  <a 
+                  <a
                     href="#project"
                     onClick={(e) => handleDesktopNavClick(e, "project")}
                   >
@@ -80,7 +82,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="text-[#002C2B] font-normal text-[20px] hover:text-[#26938A] transition-all cursor-pointer">
-                  <a 
+                  <a
                     href="#contact"
                     onClick={(e) => handleDesktopNavClick(e, "contact")}
                   >
@@ -105,25 +107,25 @@ const Navbar = () => {
             {isMobileMenuOpen && (
               <div className="md:hidden absolute top-full left-0 right-0 z-50 mt-2 bg-white rounded-2xl p-4 shadow-lg">
                 <ul className="flex flex-col gap-4">
-                  <li 
+                  <li
                     className="text-[#002C2B] font-normal text-[18px] hover:text-[#26938A] transition-all cursor-pointer py-2"
                     onClick={() => handleMobileNavClick("home")}
                   >
                     Home
                   </li>
-                  <li 
+                  <li
                     className="text-[#002C2B] font-normal text-[18px] hover:text-[#26938A] transition-all cursor-pointer py-2"
                     onClick={() => handleMobileNavClick("about")}
                   >
                     About
                   </li>
-                  <li 
+                  <li
                     className="text-[#002C2B] font-normal text-[18px] hover:text-[#26938A] transition-all cursor-pointer py-2"
                     onClick={() => handleMobileNavClick("project")}
                   >
                     Project
                   </li>
-                  <li 
+                  <li
                     className="text-[#002C2B] font-normal text-[18px] hover:text-[#26938A] transition-all cursor-pointer py-2"
                     onClick={() => handleMobileNavClick("contact")}
                   >
@@ -161,7 +163,7 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <ul className="hidden md:flex items-center gap-6">
               <li className="text-[#002C2B] font-normal text-[20px] hover:text-[#26938A] transition-all cursor-pointer">
-                <a 
+                <a
                   href="#home"
                   onClick={(e) => handleDesktopNavClick(e, "home")}
                 >
@@ -169,7 +171,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="text-[#002C2B] font-normal text-[20px] hover:text-[#26938A] transition-all cursor-pointer">
-                <a 
+                <a
                   href="#about"
                   onClick={(e) => handleDesktopNavClick(e, "about")}
                 >
@@ -177,7 +179,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="text-[#002C2B] font-normal text-[20px] hover:text-[#26938A] transition-all cursor-pointer">
-                <a 
+                <a
                   href="#project"
                   onClick={(e) => handleDesktopNavClick(e, "project")}
                 >
@@ -185,7 +187,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="text-[#002C2B] font-normal text-[20px] hover:text-[#26938A] transition-all cursor-pointer">
-                <a 
+                <a
                   href="#contact"
                   onClick={(e) => handleDesktopNavClick(e, "contact")}
                 >
@@ -205,7 +207,7 @@ const Navbar = () => {
             </div>
             {/* Mobile Navigation Menu - Hero section ichida */}
             {isMobileMenuOpen && (
-              <div className="md:hidden absolute top-full left-0 right-0 z-50 mt-2 bg-white rounded-2xl p-4 shadow-lg">
+              <div className="md:hidden absolute top-10 left-0 right-0 z-50 mt-2 bg-white rounded-2xl p-4 shadow-lg">
                 <ul className="flex flex-col gap-4">
                   <li
                     className="text-[#002C2B] font-normal text-[18px] hover:text-[#26938A] transition-all cursor-pointer py-2"
@@ -257,30 +259,41 @@ const Navbar = () => {
               <div className="flex flex-col md:flex-row items-start gap-4 md:gap-80 mt-7">
                 <div className="flex items-center gap-3.5">
                   <a
-                    aria-label="facebook"
+                    aria-label="email"
                     className="bg-[#1F4F4D] hover:bg-[#1877F2] transition-all rounded-full text-white text-[20px] p-3"
-                    href="#"
+                    href="mailto:dr.ozodayuldasheva@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <FaFacebook />
+                    <MdEmail />
                   </a>
+
                   <a
-                    aria-label="twitter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="instagram"
                     className="bg-[#1F4F4D] hover:bg-[#1DA1F2] transition-all rounded-full text-white text-[20px] p-3"
-                    href="#"
+                    href="https://www.instagram.com/accounts/login/?next=%2Fdr.ozoda_yuldasheva%2F&source=omni_redirect"
                   >
-                    <FaTwitter />
+                    <FaInstagram />
                   </a>
+
                   <a
                     aria-label="linkedin"
                     className="bg-[#1F4F4D] hover:bg-[#0A66C2] transition-all rounded-full text-white text-[20px] p-3"
-                    href="#"
+                    href="https://www.linkedin.com/in/dr-ozoda-yuldasheva/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FaLinkedin />
                   </a>
+
                   <a
                     aria-label="telegram"
                     className="bg-[#1F4F4D] hover:bg-[#0088CC] transition-all rounded-full text-white text-[20px] p-3"
-                    href="#"
+                    href="https://t.me/FOSNAASH/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <BsTelegram />
                   </a>

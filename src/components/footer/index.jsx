@@ -1,7 +1,7 @@
 import { MdEmail } from "react-icons/md";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaInstagram, FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
-import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { BsTelegram } from "react-icons/bs";
 
 const Footer = () => {
@@ -11,11 +11,13 @@ const Footer = () => {
         {/* Logo & Contact */}
         <div className="flex flex-col gap-4 md:w-[400px]">
           <a
-            href="#"
+            aria-label="email"
+            href="mailto:dr.ozodayuldasheva@gmail.com"
+            target="_blank"
             className="flex items-center gap-2 text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer"
           >
             <MdEmail size={20} />
-            info@sustainability-office.com
+            dr.ozodayuldasheva@gmail.com
           </a>
           <a
             href="#"
@@ -47,7 +49,7 @@ const Footer = () => {
                 Recognitions & Scholarships
               </li>
               <li className="text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer">
-                Get in Touch with me
+                <a href="#contact">Get in Touch with me</a>
               </li>
             </ul>
           </div>
@@ -60,13 +62,10 @@ const Footer = () => {
                 <a href="#team">Dr. Ozoda’s Team</a>
               </li>
               <li className="text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer">
-                International Experience
+                <a href="#experience">International Experience</a>
               </li>
               <li className="text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer">
                 <a href="#project">Projects</a>
-              </li>
-              <li className="text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer">
-                Get in Touch with me
               </li>
             </ul>
           </div>
@@ -85,24 +84,30 @@ const Footer = () => {
             >
               <FaFacebook />
             </a>
+
             <a
-              aria-label="twitter"
               className="bg-[#1F4F4D] rounded-full text-white text-[20px] p-3 hover:bg-[#1DA1F2] transition-all cursor-pointer"
-              href="#"
+              href="https://www.instagram.com/accounts/login/?next=%2Fdr.ozoda_yuldasheva%2F&source=omni_redirect"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <FaTwitter />
+              <FaInstagram />
             </a>
             <a
-              aria-label="linkedin"
               className="bg-[#1F4F4D] rounded-full text-white text-[20px] p-3 hover:bg-[#0A66C2] transition-all cursor-pointer"
-              href="#"
+              href="https://www.linkedin.com/in/dr-ozoda-yuldasheva/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaLinkedin />
             </a>
+
             <a
-              aria-label="telegram"
               className="bg-[#1F4F4D] rounded-full text-white text-[20px] p-3 hover:bg-[#0088CC] transition-all cursor-pointer"
-              href="#"
+              href="https://t.me/FOSNAASH/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="telegram"
             >
               <BsTelegram />
             </a>

@@ -89,6 +89,13 @@ const About = () => {
                 cooperation, and support organizations in transitioning toward a
                 cleaner, more resilient future.
               </p>
+
+              <button
+                onClick={() => setOpen(false)}
+                className="w-fit px-10 py-4 font-medium text-[14px] bg-[#1F4F4D] text-white rounded-full hover:bg-[#26938A] transition"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>

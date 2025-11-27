@@ -516,7 +516,7 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="instagram"
-                    className="bg-[#1F4F4D] hover:bg-[#1DA1F2] transition-all rounded-full text-white text-[20px] p-3"
+                    className="bg-[#1F4F4D] hover:bg-[#E1306C] transition-all rounded-full text-white text-[20px] p-3"
                     href="https://www.instagram.com/accounts/login/?next=%2Fdr.ozoda_yuldasheva%2F&source=omni_redirect"
                   >
                     <FaInstagram />

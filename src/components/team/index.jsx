@@ -6,14 +6,9 @@ import nodir from "../../assets/team/nodir.png";
 import shaxrizoda from "../../assets/team/shaxrizoda.png";
 import fozil from "../../assets/team/fozil.png";
 import gozal from "../../assets/team/gozal.png";
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaInstagram,
-  FaLinkedin,
-  FaTelegram,
-} from "react-icons/fa6";
+import { FaArrowLeft, FaArrowRight, FaTelegram } from "react-icons/fa6";
 import {} from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
 const cards = [
   {
@@ -21,54 +16,42 @@ const cards = [
     image: iskandar,
     fullName: "Hamrayev Iskandar Alisher o'g'li",
     email: "Hamraev-2000@mail.ru",
-    telegram: "@HamrayevIskandar",
-    linkedin: "",
-    instagram: "",
+    telegram: "https://t.me/HamrayevIskandar",
   },
   {
     id: 2,
     image: shaxrizoda,
     fullName: "Xakimova Shahrizoda Dilmurodovna ",
     email: "shahri@gmail.com",
-    telegram: "@shahri_2611",
-    linkedin: "",
-    instagram: "",
+    telegram: "https://t.me/shahri_2611",
   },
   {
     id: 3,
     image: nodir,
     fullName: "Narkuziyev Nodirbek Kadirovich",
     email: "nodirnarkuziyev@mail.ru",
-    telegram: "@Narkuziyev",
-    linkedin: "",
-    instagram: "",
+    telegram: "https://t.me/Narkuziyev",
   },
   {
     id: 4,
     image: mushtariybegim,
     fullName: "Muxammadova Mushtariybegim Otabekovna",
     email: "mushtariybegim215@gmail.com",
-    telegram: "@Mushtariybegim_Otabekovna",
-    linkedin: "",
-    instagram: "",
+    telegram: "https://t.me/Mushtariybegim_Otabekovna",
   },
   {
     id: 5,
     image: fozil,
     fullName: "Foziljon Ruzmamatov Asliddin o'g'li",
     email: "fozilruzmamatoz@gmail.com",
-    telegram: "@Foziljon_Ruzmamatov",
-    linkedin: "",
-    instagram: "",
+    telegram: "https://t.me/Foziljon_Ruzmamatov",
   },
   {
     id: 6,
     image: gozal,
     fullName: "Xasanova Go’zal \nO’ktamovna",
     email: "xasanovagozal3@gmail.com",
-    telegram: "",
-    linkedin: "",
-    instagram: "",
+    telegram: "https://t.me/ghasanova0205",
   },
   {
     id: 7,
@@ -76,8 +59,6 @@ const cards = [
     fullName: "Nurmamatov Murodil Mansur o'g'li",
     email: "nurmamatovmirodil978@gmail.com",
     telegram: "https://t.me/Murodil_N",
-    linkedin: "https://www.linkedin.com/in/murodil01",
-    instagram: "https://www.instagram.com/mr.odil01?igsh=bjl5cmxjOWw1aDY1",
   },
 ];
 
@@ -178,32 +159,22 @@ const Team = () => {
                     ))}
                   </h3>
 
-                  <p className="text-base sm:text-lg text-center text-[#002C2B]/80 mt-3 line-clamp-3">
-                    {card.email}
-                  </p>
-
                   <div className="flex items-center justify-center gap-3.5 mt-6">
                     <a
-                      href={card.instagram}
-                      className="bg-[#1F4F4D] hover:bg-[#E1306C] text-white p-[11px] rounded-full border-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaInstagram size={20} />
-                    </a>
-                    <a
-                      href={card.linkedin}
+                      href={`mailto:${card.email}`}
                       className="bg-[#1F4F4D] hover:bg-[#0A66C2] text-white p-[11px] rounded-full border-none"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="email"
                     >
-                      <FaLinkedin size={20} />
+                      <MdEmail size={20} />
                     </a>
                     <a
                       href={card.telegram}
                       className="bg-[#1F4F4D] hover:bg-[#0088CC] text-white p-[11px] rounded-full border-none"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="telegram"
                     >
                       <FaTelegram size={20} />
                     </a>

@@ -20,13 +20,15 @@ const Footer = () => {
             dr.ozodayuldasheva@gmail.com
           </a>
           <a
-            href="#"
+            href="https://www.google.com/maps/search/?api=1&query=Blk+135,+%2305-137,+Bedok+North+Street+2,+Singapore+460135"
             className="flex items-center gap-2 text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaLocationDot size={20} />
-            All Rights Reserved. <br /> Sustainability • Engineering • ESG
-            Consulting
+            Blk 135, #05-137, Bedok North Street 2, Singapore 460135 Singapore
           </a>
+
           <a
             href="#"
             className="flex items-center gap-2 text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer"
@@ -86,7 +88,7 @@ const Footer = () => {
             </a>
 
             <a
-              className="bg-[#1F4F4D] rounded-full text-white text-[20px] p-3 hover:bg-[#1DA1F2] transition-all cursor-pointer"
+              className="bg-[#1F4F4D] rounded-full text-white text-[20px] p-3 hover:bg-[#E1306C] transition-all cursor-pointer"
               href="https://www.instagram.com/accounts/login/?next=%2Fdr.ozoda_yuldasheva%2F&source=omni_redirect"
               target="_blank"
               rel="noopener noreferrer"

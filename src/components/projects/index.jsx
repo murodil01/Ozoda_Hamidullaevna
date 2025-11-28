@@ -200,7 +200,7 @@ const Projects = () => {
           {cards.map((card) => (
             <div
               key={card.id}
-              className="shrink-0 w-[88vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
+              className="shrink-0 w-[88vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center sm:snap-start"
             >
               <div className="bg-white rounded-2xl border-2 border-[#ECECEC] hover:border-[#26938A] shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col overflow-hidden group">
                 <div

@@ -131,16 +131,17 @@ const Team = () => {
 
       {/* Slider Container */}
       <div className="relative">
+        
         {/* Cards Slider */}
         <div
           ref={sliderRef}
-          className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-4"
+          className="flex justify-center sm:justify-start gap-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-4"
           onScroll={checkScrollButtons}
         >
           {cards.map((card) => (
             <div
               key={card.id}
-              className="shrink-0 w-[88vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
+              className="shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center sm:snap-start"
             >
               <div className="bg-white rounded-2xl border-2 border-[#DBDBDB] hover:border-[#26938A] shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col overflow-hidden group">
                 <div className="p-3 lg:py-[38px] px-3 lg:px-4 cursor-pointer">
@@ -150,11 +151,10 @@ const Team = () => {
                     className="w-full h-[327px] sm:h-56 lg:h-[410px] object-cover rounded-lg"
                     loading="lazy"
                   />
-                  <h3 className="text-xl h-[60px] text-center sm:text-2xl font-bold mt-5 text-[#002C2B] leading-tight">
+                  <h3 className="text-xl min-h-[60px] flex items-center justify-center text-center sm:text-2xl font-bold mt-5 text-[#002C2B] leading-tight">
                     {card.fullName.split("\n").map((line, index) => (
-                      <span key={index}>
+                      <span key={index} className="block">
                         {line}
-                        <br />
                       </span>
                     ))}
                   </h3>
@@ -162,16 +162,17 @@ const Team = () => {
                   <div className="flex items-center justify-center gap-3.5 mt-6">
                     <a
                       href={`mailto:${card.email}`}
-                      className="bg-[#1F4F4D] hover:bg-[#0A66C2] text-white p-[11px] rounded-full border-none"
+                      className="bg-[#1F4F4D] hover:bg-[#0A66C2] text-white p-[11px] rounded-full border-none transition-colors duration-300"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="email"
                     >
                       <MdEmail size={20} />
                     </a>
+
                     <a
                       href={card.telegram}
-                      className="bg-[#1F4F4D] hover:bg-[#0088CC] text-white p-[11px] rounded-full border-none"
+                      className="bg-[#1F4F4D] hover:bg-[#0088CC] text-white p-[11px] rounded-full border-none transition-colors duration-300"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="telegram"

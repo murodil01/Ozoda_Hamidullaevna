@@ -50,11 +50,11 @@ const Footer = () => {
           <div className="flex flex-col gap-2.5">
             <h3 className="text-[#000000] text-[18px] font-medium">Home</h3>
             <ul className="flex flex-col gap-2">
+              {/* <li className="text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer">
+                <a href="#">Key Expertise Areas</a>
+              </li> */}
               <li className="text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer">
-                Key Expertise Areas
-              </li>
-              <li className="text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer">
-                Recognitions & Scholarships
+                <a href="#gallery">Recognitions & Scholarships</a>
               </li>
               <li className="text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer">
                 <a href="#contact">Get in Touch with me</a>

@@ -72,7 +72,7 @@ const Gallery = () => {
     setPreviewIndex((p) => (p === personImage.length - 1 ? 0 : p + 1));
 
   return (
-    <div>
+    <div id="gallery">
       <div className="max-w-[1376px] mx-auto px-[25px]">
         <h3 className="text-[#002C2B] text-[32px] font-normal">- Gallery</h3>
         <h3 className="text-[#002C2B] text-4xl sm:text-5xl md:text-[44px] lg:text-[56px] font-medium">

@@ -131,7 +131,6 @@ const Team = () => {
 
       {/* Slider Container */}
       <div className="relative">
-        
         {/* Cards Slider */}
         <div
           ref={sliderRef}
@@ -168,16 +167,6 @@ const Team = () => {
                       aria-label="email"
                     >
                       <MdEmail size={20} />
-                    </a>
-
-                    <a
-                      href={card.telegram}
-                      className="bg-[#1F4F4D] hover:bg-[#0088CC] text-white p-[11px] rounded-full border-none transition-colors duration-300"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="telegram"
-                    >
-                      <FaTelegram size={20} />
                     </a>
                   </div>
                 </div>

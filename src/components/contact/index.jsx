@@ -77,7 +77,7 @@ const Contact = () => {
             international academic consultation.
           </h3>
 
-          <div className="flex flex-col gap-5 mt-25">
+          <div className="flex flex-col gap-5 mt-5 md:mt-25">
             {/* Email */}
             <div className="flex items-center gap-3">
               <a

@@ -150,12 +150,11 @@ const Team = () => {
                     className="w-full h-[327px] sm:h-56 lg:h-[410px] object-cover rounded-lg"
                     loading="lazy"
                   />
-                  <h3 className="text-xl min-h-[60px] flex items-center justify-center text-center sm:text-2xl font-bold mt-5 text-[#002C2B] leading-tight">
-                    {card.fullName.split("\n").map((line, index) => (
-                      <span key={index} className="block">
-                        {line}
-                      </span>
-                    ))}
+                  <h3
+                    className="text-xl min-h-[60px] flex items-center justify-center text-center sm:text-2xl font-bold mt-5 text-[#002C2B] leading-tight"
+                    style={{ whiteSpace: "pre-line" }}
+                  >
+                    {card.fullName}
                   </h3>
 
                   <div className="flex items-center justify-center gap-3.5 mt-6">

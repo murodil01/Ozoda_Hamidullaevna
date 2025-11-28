@@ -490,7 +490,7 @@ const Navbar = () => {
           </div>
 
           {/* Hero Content */}
-          <div className="my-16 md:my-25">
+          <div className="mb-20 mt-10 md:my-25">
             <div>
               <h1 className="text-[#FFFFFF] text-[27px] sm:text-3xl md:text-4xl lg:text-5xl xl:text-[70px] font-bold">
                 Dr. Ozoda Hamidullaevna <br /> Yuldasheva
@@ -555,7 +555,7 @@ const Navbar = () => {
 
       {/* Bitta Mobile Navigation Menu - Barcha joylar uchun */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white bg-opacity-50 flex items-start justify-center pt-20 px-4">
+        <div className="fixed inset-0 z-50 bg-white bg-opacity-50 flex items-start justify-center pt-15 px-2">
           <div className="bg-[#D0EEEDE5] rounded-2xl p-6 w-full max-w-md relative">
             {/* Close Button - Modal ichida */}
             <button

@@ -84,7 +84,7 @@ const Contact = () => {
                 aria-label="email"
                 href="mailto:dr.ozodayuldasheva@gmail.com"
                 target="_blank"
-                className="bg-[#1F4F4D] text-white rounded-full p-3 hover:bg-[#E1306C] transition-all"
+                className="bg-[#1F4F4D] text-white rounded-full p-3 hover:bg-[#1877F2] transition-all"
               >
                 <MdEmail size={18} />
               </a>

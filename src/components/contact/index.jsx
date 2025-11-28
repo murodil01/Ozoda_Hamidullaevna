@@ -6,11 +6,11 @@ import { FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    ism: "",
+    name: "",
     email: "",
     phone: "",
     country: "",
-    xabar: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
@@ -25,11 +25,11 @@ const Contact = () => {
     e.preventDefault();
 
     const data = new FormData();
-    data.append("ism", formData.ism);
+    data.append("name", formData.name);
     data.append("email", formData.email);
     data.append("phone", formData.phone);
     data.append("country", formData.country);
-    data.append("xabar", formData.xabar);
+    data.append("message", formData.message);
 
     try {
       const response = await fetch("https://formspree.io/f/mqavzzyw", {
@@ -39,20 +39,20 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        toast.success("Muvaffaqiyatli yuborildi!");
+        toast.success("Successfully sent!");
         setFormData({
-          ism: "",
+          name: "",
           email: "",
           phone: "",
           country: "",
-          xabar: "",
+          message: "",
         });
       } else {
-        toast.error("Xatolik yuz berdi. Qayta urinib ko‘ring.");
+        toast.error("An error occurred. Please try again.");
       }
     } catch (error) {
       console.error("Error:", error);
-      toast.error("⚠️ Serverga ulanib bo‘lmadi.");
+      toast.error("⚠️ Could not connect to the server.");
     }
   };
 
@@ -172,8 +172,8 @@ const Contact = () => {
                   Your Name
                 </label>
                 <input
-                  name="ism"
-                  value={formData.ism}
+                  name="name"
+                  value={formData.name}
                   onChange={handleInputChange}
                   type="text"
                   required
@@ -234,8 +234,8 @@ const Contact = () => {
                   Message
                 </label>
                 <textarea
-                  name="xabar"
-                  value={formData.xabar}
+                  name="message"
+                  value={formData.message}
                   onChange={handleInputChange}
                   rows={6}
                   required

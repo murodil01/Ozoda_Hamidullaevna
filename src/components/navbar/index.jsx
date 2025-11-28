@@ -316,12 +316,7 @@
 // export default Navbar;
 
 import { useState, useEffect } from "react";
-import {
-  FaLinkedin,
-  FaBars,
-  FaTimes,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaLinkedin, FaBars, FaTimes, FaInstagram } from "react-icons/fa";
 import { BsTelegram } from "react-icons/bs";
 import hero1 from "../../assets/hero/hero1.png";
 import hero2 from "../../assets/hero/hero2.svg";
@@ -371,6 +366,7 @@ const Navbar = () => {
           <div className="max-w-[1290px] mx-auto px-4 md:px-[25px] py-5">
             <div className="flex gap-50 items-center relative py-3 md:py-0">
               <button
+                onClick={() => window.open("/files/Resume_OY.pdf", "_blank")}
                 aria-label="Download"
                 className="hidden md:block bg-[#1F4F4D] hover:bg-[#26938A] transition-all text-white text-[24px] font-medium rounded-[50px] py-3.5 px-[70px] cursor-pointer"
               >
@@ -440,7 +436,10 @@ const Navbar = () => {
         {/* Navbar ichida */}
         <div className="relative z-10">
           <div className="flex gap-50 items-center relative">
-            <button className="hidden md:block bg-[#1F4F4D] hover:bg-[#26938A] transition-all text-white text-[24px] font-medium rounded-[50px] py-3.5 px-[70px] cursor-pointer">
+            <button
+              onClick={() => window.open("/files/Resume_OY.pdf", "_blank")}
+              className="hidden md:block bg-[#1F4F4D] hover:bg-[#26938A] transition-all text-white text-[24px] font-medium rounded-[50px] py-3.5 px-[70px] cursor-pointer"
+            >
               Download CV
             </button>
             {/* Desktop Navigation */}
@@ -566,7 +565,7 @@ const Navbar = () => {
             >
               <FaTimes />
             </button>
-            
+
             <ul className="flex flex-col gap-4 mt-6">
               <li
                 className="text-[#002C2B] font-normal text-[18px] hover:text-[#26938A] transition-all cursor-pointer py-3 px-4 rounded-lg hover:bg-gray-50"
@@ -593,11 +592,14 @@ const Navbar = () => {
                 Contact
               </li>
             </ul>
-            
+
             <button
               aria-label="Download"
               className="w-full mt-6 bg-[#1F4F4D] hover:bg-[#26938A] transition-all text-white text-[18px] font-medium rounded-[50px] py-3 px-6 cursor-pointer"
-              onClick={closeMobileMenu}
+              onClick={() => {
+                closeMobileMenu();
+                window.open("/files/Resume_OY.pdf", "_blank");
+              }}
             >
               Download CV
             </button>

@@ -11,6 +11,7 @@ const Footer = () => {
         {/* Logo & Contact */}
         <div className="flex flex-col gap-4 md:w-[400px]">
           <a
+            rel="noopener noreferrer"
             aria-label="email"
             href="mailto:dr.ozodayuldasheva@gmail.com"
             target="_blank"
@@ -19,7 +20,9 @@ const Footer = () => {
             <MdEmail size={20} />
             dr.ozodayuldasheva@gmail.com
           </a>
+
           <a
+            aria-label="location"
             href="https://www.google.com/maps/search/?api=1&query=Blk+135,+%2305-137,+Bedok+North+Street+2,+Singapore+460135"
             className="flex items-center gap-2 text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer"
             target="_blank"
@@ -30,11 +33,14 @@ const Footer = () => {
           </a>
 
           <a
-            href="#"
+            aria-label="phone"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="tel:+6580247487"
             className="flex items-center gap-2 text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer"
           >
             <FaPhoneAlt size={20} />
-            +998 (__) --_
+            +6580247487
           </a>
         </div>
 
@@ -82,12 +88,15 @@ const Footer = () => {
             <a
               aria-label="facebook"
               className="bg-[#1F4F4D] rounded-full text-white text-[20px] p-3 hover:bg-[#1877F2] transition-all cursor-pointer"
-              href="#"
+              href="https://www.facebook.com/share/1AGAnkeW8o/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FaFacebook />
             </a>
 
             <a
+              aria-label="instagram"
               className="bg-[#1F4F4D] rounded-full text-white text-[20px] p-3 hover:bg-[#E1306C] transition-all cursor-pointer"
               href="https://www.instagram.com/accounts/login/?next=%2Fdr.ozoda_yuldasheva%2F&source=omni_redirect"
               target="_blank"
@@ -95,7 +104,9 @@ const Footer = () => {
             >
               <FaInstagram />
             </a>
+
             <a
+              aria-label="linkedin"
               className="bg-[#1F4F4D] rounded-full text-white text-[20px] p-3 hover:bg-[#0A66C2] transition-all cursor-pointer"
               href="https://www.linkedin.com/in/dr-ozoda-yuldasheva/"
               target="_blank"
@@ -105,11 +116,11 @@ const Footer = () => {
             </a>
 
             <a
+              aria-label="telegram"
               className="bg-[#1F4F4D] rounded-full text-white text-[20px] p-3 hover:bg-[#0088CC] transition-all cursor-pointer"
               href="https://t.me/FOSNAASH/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="telegram"
             >
               <BsTelegram />
             </a>

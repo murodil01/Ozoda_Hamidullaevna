@@ -67,7 +67,7 @@ const Footer = () => {
             <h3 className="text-[#000000] text-[18px] font-medium">About us</h3>
             <ul className="flex flex-col gap-2">
               <li className="text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer">
-                <a href="#team">Dr. Ozoda’s Team</a>
+                <a  href="#team">Dr. Ozoda’s Team</a>
               </li>
               <li className="text-[#000000] text-[16px] font-normal hover:text-[#26938A] transition-all cursor-pointer">
                 <a href="#experience">International Experience</a>

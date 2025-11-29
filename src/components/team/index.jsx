@@ -14,56 +14,51 @@ const cards = [
   {
     id: 1,
     image: iskandar,
-    fullName: "Hamrayev Iskandar Alisher o'g'li",
+    fullName: "Hamrayev Iskandar \nAlisher o'g'li",
     email: "Hamraev-2000@mail.ru",
-    telegram: "https://t.me/HamrayevIskandar",
   },
   {
     id: 2,
     image: shaxrizoda,
     fullName: "Xakimova Shahrizoda Dilmurodovna ",
     email: "shahri@gmail.com",
-    telegram: "https://t.me/shahri_2611",
   },
   {
     id: 3,
     image: nodir,
     fullName: "Narkuziyev Nodirbek Kadirovich",
     email: "nodirnarkuziyev@mail.ru",
-    telegram: "https://t.me/Narkuziyev",
   },
   {
     id: 4,
     image: mushtariybegim,
     fullName: "Muxammadova Mushtariybegim Otabekovna",
     email: "mushtariybegim215@gmail.com",
-    telegram: "https://t.me/Mushtariybegim_Otabekovna",
   },
   {
     id: 5,
     image: fozil,
-    fullName: "Foziljon Ruzmamatov Asliddin o'g'li",
+    fullName: "Foziljon Ruzmamatov \nAsliddin o'g'li",
     email: "fozilruzmamatoz@gmail.com",
-    telegram: "https://t.me/Foziljon_Ruzmamatov",
   },
   {
     id: 6,
     image: gozal,
-    fullName: "Xasanova Go’zal \nO’ktamovna",
+    fullName: "Xasanova Go'zal \nO'ktamovna",
     email: "xasanovagozal3@gmail.com",
-    telegram: "https://t.me/ghasanova0205",
   },
   {
     id: 7,
     image: murodil,
-    fullName: "Nurmamatov Murodil Mansur o'g'li",
+    fullName: "Nurmamatov Murodil \nMansur o'g'li",
     email: "nurmamatovmirodil978@gmail.com",
-    telegram: "https://t.me/Murodil_N",
   },
 ];
 
 const Team = () => {
   const sliderRef = useRef(null);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(true);
 
   const checkScrollButtons = () => {
     if (!sliderRef.current) return;
@@ -72,24 +67,25 @@ const Team = () => {
     setCanNext(scrollLeft + clientWidth < scrollWidth - 10);
   };
 
-  const [canPrev, setCanPrev] = useState(false);
-  const [canNext, setCanNext] = useState(true);
-
   const scrollPrev = () => {
-    sliderRef.current?.scrollBy({ left: -420, behavior: "smooth" });
+    if (!sliderRef.current) return;
+
+    const cardWidth =
+      sliderRef.current.querySelector(".card-item")?.offsetWidth || 320;
+    sliderRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
   };
 
   const scrollNext = () => {
     if (!sliderRef.current) return;
 
     const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+    const cardWidth =
+      sliderRef.current.querySelector(".card-item")?.offsetWidth || 320;
 
-    // Oxiriga yetganini tekshiramiz
     if (scrollLeft + clientWidth >= scrollWidth - 10) {
-      // BOSHIGA QAYTADI
       sliderRef.current.scrollTo({ left: 0, behavior: "smooth" });
     } else {
-      sliderRef.current.scrollBy({ left: 420, behavior: "smooth" });
+      sliderRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
     }
   };
 
@@ -101,7 +97,6 @@ const Team = () => {
       slider.addEventListener("scroll", handle);
       window.addEventListener("resize", handle);
 
-      // AUTOPLAY: har 3 soniyada next tugmasi chaqiriladi
       const interval = setInterval(() => {
         scrollNext();
       }, 3000);
@@ -117,7 +112,7 @@ const Team = () => {
   return (
     <section
       id="team"
-      className="w-full px-4 sm:px-8 lg:px-16 xl:px-24 2xl:max-w-[1376px] 2xl:mx-auto py-16 lg:py-20"
+      className="w-full px-4 sm:px-8 lg:px-16 xl:px-24 2xl:max-w-[1376px] 2xl:mx-auto py-10 lg:py-10"
     >
       {/* Title */}
       <div className="mb-12 lg:mb-16 text-left">
@@ -125,7 +120,7 @@ const Team = () => {
           - Team
         </h3>
         <h3 className="text-[28px] sm:text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-medium leading-tight text-[#26938A]">
-          <span className="text-[#002C2B]">Dr. Ozoda’s </span> Team
+          <span className="text-[#002C2B]">Dr. Ozoda's </span> Team
         </h3>
       </div>
 
@@ -134,15 +129,15 @@ const Team = () => {
         {/* Cards Slider */}
         <div
           ref={sliderRef}
-          className="flex justify-center sm:justify-start gap-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-4"
+          className="flex gap-5 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
           onScroll={checkScrollButtons}
         >
           {cards.map((card) => (
             <div
               key={card.id}
-              className="shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center sm:snap-start"
+              className="card-item shrink-0 w-[85vw] mx-2 sm:mx-0 sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center"
             >
-              <div className="bg-white rounded-2xl border-2 border-[#DBDBDB] hover:border-[#26938A] shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col overflow-hidden group">
+              <div className="bg-white rounded-2xl border-2 border-[#DBDBDB] hover:border-[#26938A] shadow-lg transition-all duration-300 h-full flex flex-col overflow-hidden group mx-2 sm:mx-0">
                 <div className="p-3 lg:py-[38px] px-3 lg:px-4 cursor-pointer">
                   <img
                     src={card.image}
@@ -157,7 +152,7 @@ const Team = () => {
                     {card.fullName}
                   </h3>
 
-                  <div className="flex items-center justify-center gap-3.5 mt-6">
+                  <div className="flex items-center justify-center mt-6">
                     <a
                       href={`mailto:${card.email}`}
                       className="bg-[#1F4F4D] hover:bg-[#0A66C2] text-white p-[11px] rounded-full border-none transition-colors duration-300"
@@ -174,7 +169,7 @@ const Team = () => {
           ))}
         </div>
 
-        {/* ARROWS — ALWAYS BELOW, FIXED POSITION */}
+        {/* ARROWS */}
         <div className="flex justify-end gap-4 mt-10">
           <button
             aria-label="prev"

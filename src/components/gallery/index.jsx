@@ -80,12 +80,12 @@ const Gallery = () => {
         </h3>
       </div>
 
-      <div className="bg-[#AFC3C1] max-w-[1376px] mx-auto rounded-4xl px-[25px] py-[113px] mt-10 relative overflow-hidden">
+      <div className="bg-[#AFC3C1] max-w-[1376px] mx-auto rounded-4xl px-[25px] py-[60px] md:py-[113px] mt-10 relative overflow-hidden">
         <div className="overflow-hidden">
           {/* Bu joyni o‘zgartirdim – hammasi shu bilan hal bo‘ldi */}
           <div className="-mx-[25px] px-[25px]">
             <div
-              className="flex transition-transform duration-500 ease-in-out"
+              className="flex justify-center md:justify-start transition-transform duration-500 ease-in-out"
               style={{
                 gap: config.isDesktop ? "20px" : "0px",
                 transform: config.isDesktop
